@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import AboutView from '@/views/AboutView.vue';
 import PostCreateView from '@/views/posts/PostCreateView.vue';
+import PostEditView from '@/views/posts/PostEditView.vue';
 import PostDetailView from '@/views/posts/PostDetailView.vue';
 import PostListView from '@/views/posts/PostListView.vue';
-import PostEditView from '@/views/posts/PostEditView.vue';
 
 const routes = [
   {
@@ -18,20 +18,24 @@ const routes = [
     component: AboutView,
   },
   {
-    path: '/posts',
-    component: PostListView,
-  },
-  {
     path: '/posts/create',
+    name: 'PostCreate',
     component: PostCreateView,
   },
   {
+    path: '/posts/edit/:id',
+    name: 'PostEdit',
+    component: PostEditView,
+  },
+  {
     path: '/posts/:id',
+    name: 'PostDetail',
     component: PostDetailView,
   },
   {
-    path: '/posts/:id/edit',
-    component: PostEditView,
+    path: '/posts',
+    name: 'PostList',
+    component: PostListView,
   },
 ];
 

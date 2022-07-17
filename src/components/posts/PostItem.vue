@@ -6,16 +6,13 @@
         {{ content }}
       </p>
       <small class="text-muted">
-        <!-- {{ dayjs(createdAt).format('M월 D일 H시 m분 s초') }} -->
+        {{ createdAt }}
       </small>
     </div>
   </div>
 </template>
 
 <script setup>
-import { inject } from 'vue';
-
-// const dayjs = inject('dayjs');
 defineProps({
   title: {
     type: String,

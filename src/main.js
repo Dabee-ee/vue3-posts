@@ -4,9 +4,11 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from '@/router';
 import person from './plugins/person';
+import globalComponents from '@/plugins/global-components';
 
 const app = createApp(App);
 app.use(person, { name: '홍길동' });
+app.use(globalComponents);
 app.use(router);
 app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';

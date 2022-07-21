@@ -17,25 +17,24 @@
 </template>
 
 <script setup>
-  import AppModal from '@/components/AppModal.vue';
-  import { computed } from 'vue';
-  const props = defineProps({
-    modelValue: Boolean,
-    title: String,
-    content: String,
-    createdAt: [String, Number],
-  });
-  const emit = defineEmits(['update:modelValue']);
+import { computed } from 'vue';
+const props = defineProps({
+  modelValue: Boolean,
+  title: String,
+  content: String,
+  createdAt: [String, Number],
+});
+const emit = defineEmits(['update:modelValue']);
 
-  const show = computed({
-    get() {
-      return props.modelValue;
-    },
-    set(value) {
-      emit('update:modelValue', value);
-    },
-  });
-  const closeModal = () => (show.value = false);
+const show = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(value) {
+    emit('update:modelValue', value);
+  },
+});
+const closeModal = () => (show.value = false);
 </script>
 
 <style lang="scss" scoped></style>

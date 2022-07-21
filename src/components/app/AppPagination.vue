@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 const props = defineProps({
   currentPage: {

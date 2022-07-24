@@ -7,7 +7,7 @@
         <div class="col-3 text-muted">내용</div>
         <div class="col-9">{{ content }}</div>
         <div class="col-3 text-muted">등록일</div>
-        <div class="col-9">{{ createdAt }}</div>
+        <div class="col-9">{{ $dayjs(createdAt).format('YYYY. MM. DD HH:mm:ss') }}</div>
       </div>
     </template>
     <template #actions>
@@ -22,7 +22,7 @@ const props = defineProps({
   modelValue: Boolean,
   title: String,
   content: String,
-  createdAt: [String, Number],
+  createdAt: [String, Number, Date],
 });
 const emit = defineEmits(['update:modelValue']);
 

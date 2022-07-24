@@ -7,6 +7,7 @@ import router from '@/router';
 // import globalComponents from '@/plugins/global-components';
 // import focus from '@/directives/focus';
 import globalDirectives from '@/plugins/global-directives';
+import dayjs from './plugins/dayjs';
 
 const app = createApp(App);
 app.use(globalDirectives);
@@ -14,5 +15,6 @@ app.use(globalDirectives);
 // app.use(person, { name: '홍길동' });
 // app.use(globalComponents);
 app.use(router);
+app.use(dayjs);
 app.mount('#app');
 import 'bootstrap/dist/js/bootstrap.js';
